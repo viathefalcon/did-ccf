@@ -53,12 +53,12 @@ export class IdentifierStore {
    * is the controller of the identifier.
    * @param {string} id for the identifier being read from the store.
    * @param {AuthenticatedIdentity} authenticatedIdentity making the request to read from the store.
-   * @param {boolean} [checkControl=true] indicating whether to check that the provided
+   * @param {boolean} [checkControl=false] indicating whether to check that the provided
    * authenticated identity is the controller of the document.
    * @returns a {@link Identifier} instance for the identifier if found
    * otherwise void.
    */
-  public read (id: string, authenticatedIdentity: AuthenticatedIdentity, checkControl: boolean = true) : Identifier {
+  public read (id: string, authenticatedIdentity: AuthenticatedIdentity, checkControl: boolean = false) : Identifier {
     let identifier = this.store.get(id);
 
     if (!identifier) {
